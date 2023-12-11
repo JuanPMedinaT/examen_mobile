@@ -1,0 +1,137 @@
+/* Reset de estilos para el cuerpo y los encabezados */
+body, h1, h2, ul, p {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: #333; /* Color de texto principal */
+  background-color: #f4f4f4; /* Color de fondo principal */
+}
+
+/* Estilo para la sección de inicio */
+#inicio {
+  background-color: #3498db; /* Color de fondo azul */
+  color: #fff; /* Color de texto blanco */
+  padding: 40px;
+  text-align: center;
+}
+
+/* Estilo para el encabezado h1 de la sección de inicio */
+#inicio h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+/* Estilo para el párrafo de la sección de inicio */
+#inicio p {
+  font-size: 18px;
+}
+
+/* Estilo para la sección de características */
+#caracteristicas {
+  padding: 40px;
+  background-color: #ecf0f1; /* Color de fondo gris claro */
+}
+
+/* Estilo para el encabezado h2 de la sección de características */
+#caracteristicas h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #3498db; /* Color de texto azul */
+}
+
+/* Estilo para la lista de la sección de características */
+#caracteristicas ul {
+  list-style-type: none;
+}
+
+/* Estilo para los elementos de la lista de la sección de características */
+#caracteristicas li {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+/* Estilo para la sección de ejemplos */
+#ejemplos {
+  background-color: #3498db; /* Color de fondo azul */
+  color: #fff; /* Color de texto blanco */
+  padding: 40px;
+}
+
+/* Estilo para el encabezado h2 de la sección de ejemplos */
+#ejemplos h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Estilo para la lista de la sección de ejemplos */
+#ejemplos ul {
+  list-style-type: none;
+}
+
+/* Estilo para los elementos de la lista de la sección de ejemplos */
+#ejemplos li {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+/* Estilo para el botón Descargar APK */
+button {
+  background-color: #3498db; /* Color de fondo azul */
+  color: #fff; /* Color de texto blanco */
+  font-size: 24px; /* Tamaño de fuente aumentado */
+  padding: 20px 40px; /* Aumentar el relleno */
+  cursor: pointer;
+  border: none;
+  margin-top: 40px;
+  width: auto; /* Ancho automático para centrar */
+  display: block; /* Hacer que sea un bloque para centrar automáticamente */
+  margin-left: auto; /* Centrar automáticamente en el eje horizontal */
+  margin-right: auto; /* Centrar automáticamente en el eje horizontal */
+}
+
+/* Estilo para el contenedor del código QR en versiones de escritorio */
+#qrcode {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40vh; /* 100% del alto de la ventana */
+}
+
+/* Estilo para el código QR en versiones de escritorio */
+#qrcode canvas {
+  max-width: 100%;
+  height: auto;
+
+}
+
+/* Estilo para el contenedor del código QR en versiones móviles */
+@media screen and (max-width: 767px) {
+  #qrcode {
+    display: none;
+  }
+}
+
+/* Contenido de carrusel.css */
+
+.carousel-inner img {
+  max-width: 20%;
+  height: auto;
+  margin: auto; /* Centra la imagen dentro del carrusel */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(1); /* Invierte el color de las flechas */
+}
+
+.carousel-control-prev, .carousel-control-next {
+    width: 5%; /* Ajusta el ancho según tus preferencias */
+}
+
+#carouselExample{
+  margin-top: 20px;
+}

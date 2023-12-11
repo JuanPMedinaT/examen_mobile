@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descargar APK</title>
+    <link rel="stylesheet" href="{% static 'css/pagina.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">    
+</head>
+<body>
+    <section id="inicio">
+        <h1>Aplicación confirmar asistencia</h1>
+        <p>
+            Una aplicación de confirmación de asistencia basada en códigos QR es una herramienta que permite a los organizadores de eventos registrar la asistencia de los participantes de forma rápida y sencilla. Esta aplicación utiliza códigos QR para identificar a los participantes y registrar su asistencia.
+        </p>
+    </section>
+
+    <section id="caracteristicas">
+        <h2>Características</h2>
+        <p>
+            <ul>
+                <li>1.- Es rápida y sencilla de usar.</li>
+                <li>2.- Es precisa y fiable.</li>
+                <li>3.- Es respetuosa con el medio ambiente.</li>
+            </ul>
+        </p>
+    </section>
+
+    <section id="ejemplos">
+        <h2>Ejemplos</h2>
+        <p>
+            <ul>
+                <li>* Una empresa puede utilizar esta aplicación para registrar la asistencia de sus empleados a las reuniones de la empresa.</li>
+                <li>* Una universidad puede utilizar esta aplicación para registrar la asistencia de los estudiantes a las clases.</li>
+                <li>* Un evento deportivo puede utilizar esta aplicación para registrar la asistencia de los espectadores.</li>
+            </ul>
+        </p>
+    </section>
+    <div id="carouselExample" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            {% for i in "12345" %}
+                <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                    <img src="{% static 'img/' %}{{ i }}.jpg" class="d-block w-100" alt="Imagen {{ i }}">
+                </div>
+            {% endfor %}
+        </div>
+    
+        <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Anterior</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Siguiente</span>
+        </a>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="{% static './carrusel.js' %}"></script>
+
+
+    {% if is_mobile %}
+        <script src="{% static './download.js' %}"></script>
+        <script src="{% static './carrusel.js' %}"></script>
+        <button onclick="descargarApp()">Descargar APK</button>
+    {% else %}
+        <div id="qrcode"></div>
+        <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+        <script src="{% static './carrusel.js' %}"></script>
+        <script>
+            var url = "{{ request.build_absolute_uri|safe }}";
+            // Añadir la ruta específica a la URL
+            url += "/media/app-debug.apk";  // Ajusta la ruta según la ubicación de tu archivo APK
+
+            var qrcode = new QRCode(document.getElementById("qrcode"), {
+                text: url,
+                width: 256,
+                height: 256,
+            });
+        </script>
+    {% endif %}
+</body>
+</html>
